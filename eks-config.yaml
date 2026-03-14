@@ -1,0 +1,32 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJTGEyclhYbTJ5eTR3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBek1UTXdPVE0xTURkYUZ3MHpOakF6TVRBd09UUXdNRGRhTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURqVURNRlRtMjNnSk1lbUdjR2UybGFidVlSYlVpdmtvYnY4bUp6UGdBeFJ4Vm1Xb09HNEo5YVArb2YKRWtJUzgzYkx3UFNVNDhyQ2traWhQMmtyZERUdVhNa2dPcTBLczlOQnhoZlk2bnNlcytZUWszU3lqbFpJQ3cwMQpkN1Z1a1VjODdwQlpIQnhKK3ppMkZQSXp3bEhKK0Y4SXJ0UTFCSUUrRmZnS3FuK2pxT3lhUmRZWmhLMXg5N28wCnRNSGtubVc5bGpWbllLZVExZXJUM2g5VDRnd2U2eXpocGVXamIvb2ZJdTIwNC9XK0p1azNmckp4bm1IdG80NXMKLzhhMHZFekVJL0J6bzk5eWNlQ2RQekErWkhhbG5XMTFWOWxBa1dCMElDbUN3Z05ra0k4MCtHc3FWWTdMM2JPSApvbVVrM25uanpTQjJIYW54WkJsMWY1YTQ3UlROQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJTUTNuZ0RicTVtaG9UaURjRkNnOEJ0OUhBRnBUQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQy9CSVhiSHB3VQp4OU1FSWRkR0s4Nld5aUhONGNaVFI5dWhVU2l2RUJBK0RmWWdUVXFlM2VRQ0NrUVl6VDg0QmZteU5vVHlncVJsCkV6TmYzSVhlb3NOaFdmSTV4eGZFaTFxNjc4WXZENkpQcGxzcWJnSGRTeXZxcDVKYUwzamJLT2VPSzlqVE1xOFkKQ3VxZUZTZkIvWkZ0UVBXNzlTT3V0V3RQVGtxZU1hWWNlbTIwdzNFc1ZNbGc2VSsvU1lVazk1eGlBaFFKUzFERgoyanBWUnR0dEFTTnM1VysySjQ0Y0JDVFhzSXJsWTdHUXhXc1hSWUNpY1VYQVlqRFIzR0pWYW02M3lSaEdpU2g2CjF0Q1lMdS96MDJZNjFiMENFWFA0aDdJRCs4cUlENU1sWGxYK251TWlBM1VuejlWY2pxa2c3SjZUcXR2cWJ5SzQKb003MTNndG1BbndrCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    server: https://B12D98976F9341270C66A770AC261095.gr7.ap-south-1.eks.amazonaws.com
+  name: trendstore-cluster.ap-south-1.eksctl.io
+contexts:
+- context:
+    cluster: trendstore-cluster.ap-south-1.eksctl.io
+    user: terraform-admin@trendstore-cluster.ap-south-1.eksctl.io
+  name: terraform-admin@trendstore-cluster.ap-south-1.eksctl.io
+current-context: terraform-admin@trendstore-cluster.ap-south-1.eksctl.io
+kind: Config
+users:
+- name: terraform-admin@trendstore-cluster.ap-south-1.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - eks
+      - get-token
+      - --output
+      - json
+      - --cluster-name
+      - trendstore-cluster
+      - --region
+      - ap-south-1
+      command: aws
+      env:
+      - name: AWS_STS_REGIONAL_ENDPOINTS
+        value: regional
+      provideClusterInfo: false

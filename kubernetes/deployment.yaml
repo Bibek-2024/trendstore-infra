@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trendstore-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: trendstore
+  template:
+    metadata:
+      labels:
+        app: trendstore
+    spec:
+      containers:
+      - name: trend-app
+        image: bibekdec2022/trend-app:latest
+        ports:
+        - containerPort: 80
