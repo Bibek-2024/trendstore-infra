@@ -1,114 +1,106 @@
-🛒 TrendStore E-Commerce DevOps Project
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white) ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white) ![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
+# <p align="center">🛒 TrendStore: Cloud-Native E-Commerce DevOps Project</p>
 
-**Automating the Deployment & Monitoring of a Production-Grade React Application on AWS EKS Cluster.**
+<p align="center">
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+  <img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" />
+</p>
+
+<p align="center">
+  <strong>Automating the Deployment & Monitoring of a Production-Grade React Application on AWS EKS Cluster.</strong>
+</p>
 
 ---
 
 ## 📌 Table of Contents
-- [Overview](#-overview)
-- [Project Structure](#-project-structure)
-- [Infrastructure Architecture](#-infrastructure-architecture)
-- [CI/CD Pipeline Details](#-cicd-pipeline-details)
-- [Monitoring & Alerting](#-monitoring--alerting)
-- [How to Run This Project](#-how-to-run-this-project)
-- [Author & Contact](#-author--contact)
+* [Overview](#-overview)
+* [Tools & Technologies](#-tools--technologies)
+* [Project Structure](#-project-structure)
+* [Pipeline Architecture](#-pipeline-architecture)
+* [Infrastructure & Deployment](#-infrastructure--deployment)
+* [Monitoring & Observability](#-monitoring--alerting)
+* [How to Run This Project](#-how-to-run-this-project)
+* [Author & Contact](#-author--contact)
 
 ---
 
 ## 📖 Overview
-This project showcases a complete **DevOps Lifecycle** for the TrendStore ReactJS application. It utilizes **Infrastructure as Code (Terraform)** to provision a custom AWS VPC and EKS Cluster, and implements a **Pipeline-as-Code** model using Jenkins for seamless automated deployments.
+This project showcases a complete **DevOps lifecycle** for a ReactJS application hosted on **AWS EKS**. It implements a **Pipeline-as-Code** model using Jenkins, ensuring that every code push is automatically validated, containerized, and deployed with zero manual intervention.
+
+---
+
+## 🛠 Tools & Technologies
+
+| Category | Tools Used |
+| :--- | :--- |
+| **Cloud Infrastructure** | AWS (VPC, EKS, IAM, EC2) |
+| **Containerization** | Docker, Multi-stage Builds |
+| **CI/CD Automation** | Jenkins, GitHub Webhooks |
+| **Infrastructure as Code** | Terraform |
+| **Observability** | Prometheus, Grafana, Blackbox Exporter |
+| **Orchestration** | Kubernetes (EKS) |
 
 ---
 
 ## 📂 Project Structure
 ```text
 .
-├── main.tf                     # Infrastructure entry point
-├── variables.tf                # AWS & EKS Variables
-├── Dockerfile                  # Multi-stage build (Vite/React)
-├── Jenkinsfile                 # Declarative CI/CD Pipeline
-├── dist/                       # Minified production assets
-├── kubernetes/                 # K8s Manifests
-│   ├── deployment.yaml         # Trendstore-deployment (2 Replicas)
-│   └── service.yaml            # LoadBalancer config
-├── monitoring/                 # Monitoring Stack
-│   └── prometheus-values.yaml  # Helm configuration for Prometheus
-└── terraform.tfstate           # Current infrastructure state
-
-Gemini said
-Building a clean and structured directory tree in your README.md is a great way to showcase the organization of your TrendStore repository. It proves to recruiters and hiring managers that your project is production-ready and modular.
-
-Here is the updated Markdown code including your specific folder structure and the end-to-end architecture description.
-
-Markdown
-# 🚀 TrendStore: End-to-End Cloud-Native DevOps Project
-
-An enterprise-grade CI/CD implementation for a React application, featuring Infrastructure as Code (IaC), automated scaling on AWS EKS, and a sophisticated monitoring/alerting stack.
-
----
-
-## 🏗 **Project Architecture**
-The infrastructure is built on **AWS** using **Terraform**, orchestrated by **Jenkins**, and monitored by **Prometheus & Grafana**.
-
-* **Frontend:** React.js (Vite)
-* **CI/CD:** Jenkins (Pipeline-as-Code)
-* **Orchestration:** Amazon EKS (Kubernetes)
-* **IaC:** Terraform (Modular Setup)
-* **Monitoring:** Prometheus & Grafana (Alerting via Gmail)
-
----
-
-## 📁 **Project Structure**
-
-Below is the directory structure of the TrendStore repository, organized for modular infrastructure management and efficient CI/CD workflows:
-
-```text
-.
-├── Dockerfile                  # Application containerization logic
-├── Jenkinsfile                 # CI/CD Pipeline as Code
-├── LICENSE.txt                 # Project licensing
-├── README.md                   # Project documentation
-├── dist/                       # Compiled React assets (Production Build)
-│   ├── assets/                 # Optimized JS, CSS, and Image files
-│   ├── index.html              # Main entry point
-│   └── vite.svg                # App icon
-├── eks-config.yaml             # EKS cluster configuration settings
-├── images/                     # Project screenshots for documentation
-├── kubernetes/                 # K8s Manifests
-│   ├── deployment.yaml         # App deployment logic
-│   └── service.yaml            # LoadBalancer service configuration
-├── monitoring/                 # Monitoring configurations
-│   └── prometheus-values.yaml  # Helm values for Prometheus/Grafana
-├── main.tf                     # Main Terraform entry point (VPC, IAM, EKS)
+├── main.tf                     # Terraform entry point (VPC, EKS)
 ├── variables.tf                # Infrastructure variables
-├── outputs.tf                  # Useful infrastructure outputs (ELB URLs)
-├── providers.tf                # AWS Provider configuration
-└── terraform.tfstate           # State management for infrastructure
-🛠 Core Components & Implementation
-1️⃣ Infrastructure as Code (IaC)
-Provisioned the entire cloud backbone using Terraform:
+├── Dockerfile                  # Multi-stage Docker build logic
+├── Jenkinsfile                 # Declarative Pipeline-as-Code
+├── dist/                       # Optimized production assets
+├── kubernetes/                 # K8s Manifests
+│   ├── deployment.yaml         # App deployment (2 Replicas)
+│   └── service.yaml            # AWS LoadBalancer configuration
+├── monitoring/                 # Monitoring configurations
+│   └── prometheus-values.yaml  # Prometheus & Grafana setup
+└── README.md                   # Project documentation
+🏗 Pipeline Architecture
+The diagram below illustrates the flow from a developer's machine to the live production environment hosted on Amazon EKS.
 
-VPC: Custom Virtual Private Cloud with Public/Private subnets.
+<p align="center">
+<img src="https://www.google.com/search?q=https://raw.githubusercontent.com/Bibek-2024/Trend/main/images/architecture.png" width="800" />
+</p>
 
-EKS Cluster: Managed Kubernetes service for high-availability hosting.
+🚀 CI/CD Execution Flow:
+Developer Commit ➔ GitHub Webhook ➔ Jenkins Pipeline ➔ Docker Hub ➔ AWS EKS
 
-2️⃣ Continuous Integration (CI)
-Dockerization: Created a multi-stage Dockerfile to optimize the Vite-built React application.
+📊 Monitoring & Alerting
+We implemented a proactive monitoring strategy to track the health of the E-commerce platform:
 
-GitHub Webhook: Configured automatic triggers to start the Jenkins pipeline on every commit.
+Uptime Tracking: Using Blackbox Exporter to probe the LoadBalancer endpoint.
 
-3️⃣ Continuous Deployment (CD)
-LoadBalancer: Exposed the application via an AWS Elastic Load Balancer (ELB) using Kubernetes Services.
+Alerting: Configured Gmail SMTP via Grafana for instant 🚨 [FIRING] notifications if pods drop below 1.
 
-Zero-Downtime: Implemented rolling updates via deployment.yaml.
+Dashboards: Real-time visualization of CPU, Memory, and Network traffic in Grafana.
 
-4️⃣ Observability & Alerting
-Grafana Dashboards: Custom-built gauges for Pod Availability and resource usage.
+🛠 How to Run This Project
+1️⃣ Clone & Initialize
+Bash
+git clone [https://github.com/Bibek-2024/Trend.git](https://github.com/Bibek-2024/Trend.git)
+cd Trend
+2️⃣ Provision Infrastructure
+Bash
+terraform init
+terraform apply --auto-approve
+3️⃣ Deploy Stack
+The Jenkins pipeline handles this automatically, but you can manually trigger:
 
-Email Alerting: Configured SMTP notifications to trigger professional alerts (🚨 [FIRING]) to Gmail.
-
-👨‍💻 Author
+Bash
+kubectl apply -f kubernetes/deployment.yaml
+kubectl apply -f kubernetes/service.yaml
+👤 Author & Contact
 Bibek Kumar Sahu Aspiring DevOps & Cloud Infrastructure Engineer
 
-This project was completed as part of an end-to-end DevOps training certification.
+📫 Email: bibekkumarsahu2011@gmail.com
+
+🔗 LinkedIn: bibekkumarsahu
+
+📁 GitHub: Bibek-2024
+
+<p align="center">
+<i>Generated by TrendStore-Automation Monitoring Stack</i>
+</p>
