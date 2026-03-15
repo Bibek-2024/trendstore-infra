@@ -19,8 +19,7 @@
 * [Tools & Technologies](#-tools--technologies)
 * [Project Structure](#-project-structure)
 * [Pipeline Architecture](#-pipeline-architecture)
-* [Infrastructure & Deployment](#-infrastructure--deployment)
-* [Monitoring & Observability](#-monitoring--alerting)
+* [Monitoring & Alerting](#-monitoring--alerting)
 * [How to Run This Project](#-how-to-run-this-project)
 * [Author & Contact](#-author--contact)
 
@@ -135,8 +134,9 @@ terraform output
 ### 3. Deploy Stack
 
 ```bash
-# This starts the React App, Prometheus, and Grafana
-docker-compose up -d --build
+# The Jenkins pipeline handles this automatically, but you can manually trigger:
+kubectl apply -f kubernetes/deployment.yaml
+kubectl apply -f kubernetes/service.yaml
 
 ```
 
