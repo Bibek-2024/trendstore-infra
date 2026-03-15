@@ -1,32 +1,30 @@
+
 apiVersion: v1
 clusters:
 - cluster:
-    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJTGEyclhYbTJ5eTR3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBek1UTXdPVE0xTURkYUZ3MHpOakF6TVRBd09UUXdNRGRhTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURqVURNRlRtMjNnSk1lbUdjR2UybGFidVlSYlVpdmtvYnY4bUp6UGdBeFJ4Vm1Xb09HNEo5YVArb2YKRWtJUzgzYkx3UFNVNDhyQ2traWhQMmtyZERUdVhNa2dPcTBLczlOQnhoZlk2bnNlcytZUWszU3lqbFpJQ3cwMQpkN1Z1a1VjODdwQlpIQnhKK3ppMkZQSXp3bEhKK0Y4SXJ0UTFCSUUrRmZnS3FuK2pxT3lhUmRZWmhLMXg5N28wCnRNSGtubVc5bGpWbllLZVExZXJUM2g5VDRnd2U2eXpocGVXamIvb2ZJdTIwNC9XK0p1azNmckp4bm1IdG80NXMKLzhhMHZFekVJL0J6bzk5eWNlQ2RQekErWkhhbG5XMTFWOWxBa1dCMElDbUN3Z05ra0k4MCtHc3FWWTdMM2JPSApvbVVrM25uanpTQjJIYW54WkJsMWY1YTQ3UlROQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJTUTNuZ0RicTVtaG9UaURjRkNnOEJ0OUhBRnBUQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQy9CSVhiSHB3VQp4OU1FSWRkR0s4Nld5aUhONGNaVFI5dWhVU2l2RUJBK0RmWWdUVXFlM2VRQ0NrUVl6VDg0QmZteU5vVHlncVJsCkV6TmYzSVhlb3NOaFdmSTV4eGZFaTFxNjc4WXZENkpQcGxzcWJnSGRTeXZxcDVKYUwzamJLT2VPSzlqVE1xOFkKQ3VxZUZTZkIvWkZ0UVBXNzlTT3V0V3RQVGtxZU1hWWNlbTIwdzNFc1ZNbGc2VSsvU1lVazk1eGlBaFFKUzFERgoyanBWUnR0dEFTTnM1VysySjQ0Y0JDVFhzSXJsWTdHUXhXc1hSWUNpY1VYQVlqRFIzR0pWYW02M3lSaEdpU2g2CjF0Q1lMdS96MDJZNjFiMENFWFA0aDdJRCs4cUlENU1sWGxYK251TWlBM1VuejlWY2pxa2c3SjZUcXR2cWJ5SzQKb003MTNndG1BbndrCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
-    server: https://B12D98976F9341270C66A770AC261095.gr7.ap-south-1.eks.amazonaws.com
-  name: trendstore-cluster.ap-south-1.eksctl.io
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJWGFNWi85SlBhYjB3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBek1UUXhNVEl6TWpaYUZ3MHpOakF6TVRFeE1USTRNalphTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUUMrQWNiSzg0b0VFYmttOGRkU1J5Y3VYR3MyS0FxMHhiMlIydGxIRno2VmhXM3hIaXpvTEpEcnJQWkoKVCtmV2ZPTldURk1la1Zhd2RsRERPSkJGdXRsdHJ1ZStKVUhsYzVoOXh6ZjBWZWpCOG41dTkyLzB5OVZQSjJzSwpPWkNXSmxIU2lMLytNN3ZRcCtRbG5kVHJzSjdnT3FiRzdpS2RGU2xEc3FFc1VmelR1SzRRS2llTVNBbGVVYUE1CndKMUhUeEFPb01oWFFXVm9NN0k4a05pRHloL1I1cmFpTFRJaDVxSldhWXVlQ1IrNUVvWXZvQUxKamQzTlNBYVMKa3NhV09FZkZBbXAxUDFhc1J6MVpVVDNXNFVRVVZFMVFIOHkwY0hud2w4cVh0TWJXVzFnNEUyS1pmK0JzQXU2awpaVTh4OFdkWE0rN2NIb2VCYTJUejR5cXE1RXE5QWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJSZm5FQm9wam92YndBOVVzK3lidlpmMEMrdytUQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQjBvbTF5WFBKUApqSGRXR29QUnhmbk5yVFF4RHY4VytTR3FNbmhCcGFMRk9qWnZUS3Z6VVF2ZEdrbCtWOUFxK05uelBPbjVjNU02ClB4UE9UQmFSRnpPaDlmTnpVWWp2UHpUL01FL1hIdm12SWlQMHhvRUF6NDNJMHV4azFLL2w0cUxDbXdncW42cmMKTHVDbmY2TCtlY2tubEU4WWFBWXZtanRxWFZPdG9lcVVuNTVucTRuekZZRUZrbHdPZFg1YlZBUks3d0JPeVZkawpqVzlQdm9pMkFLQkwxbHFnMHRTSm5GaDJmLzh5NVRrc0N0Ty9CRWZrVkhCRDZ5RFJmS3BXWlZDWmZ0WGhUL2w1CjVrMVNnaGFtZGc2YmF1YVIvOFgrWVIrbDFIVW1DWUF1SHg5UkpVbDlGSmlGUFJ6ODRvT0ZZUUcxTlFYUERHZW4KelRlcG1uMHdSVzlVCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    server: https://F80CD2320D8481E900894443FC95AA80.gr7.ap-south-1.eks.amazonaws.com
+  name: arn:aws:eks:ap-south-1:845561723983:cluster/trendstore-cluster
 contexts:
 - context:
-    cluster: trendstore-cluster.ap-south-1.eksctl.io
-    user: terraform-admin@trendstore-cluster.ap-south-1.eksctl.io
-  name: terraform-admin@trendstore-cluster.ap-south-1.eksctl.io
-current-context: terraform-admin@trendstore-cluster.ap-south-1.eksctl.io
+    cluster: arn:aws:eks:ap-south-1:845561723983:cluster/trendstore-cluster
+    user: arn:aws:eks:ap-south-1:845561723983:cluster/trendstore-cluster
+  name: arn:aws:eks:ap-south-1:845561723983:cluster/trendstore-cluster
+current-context: arn:aws:eks:ap-south-1:845561723983:cluster/trendstore-cluster
 kind: Config
+preferences: {}
 users:
-- name: terraform-admin@trendstore-cluster.ap-south-1.eksctl.io
+- name: arn:aws:eks:ap-south-1:845561723983:cluster/trendstore-cluster
   user:
     exec:
       apiVersion: client.authentication.k8s.io/v1beta1
       args:
-      - eks
-      - get-token
-      - --output
-      - json
-      - --cluster-name
-      - trendstore-cluster
       - --region
       - ap-south-1
+      - eks
+      - get-token
+      - --cluster-name
+      - trendstore-cluster
+      - --output
+      - json
       command: aws
-      env:
-      - name: AWS_STS_REGIONAL_ENDPOINTS
-        value: regional
-      provideClusterInfo: false
