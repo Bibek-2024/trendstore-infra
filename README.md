@@ -79,7 +79,7 @@ Below is the directory structure of the TrendStore repository, organized for mod
 The diagram below illustrates the flow from a developer's machine to the live production environment hosted on Amazon EKS.
 
 <p align="center">
-<img src="./https://github.com/Bibek-2024/trendstore-infra/blob/f14bb293015c28df0cab49fad2f09f0e19c28f8c/images/TrendStore%20DevOps%20Project%20Architecture%20diagram.png" alt="Architecture Diagram" width="850">
+<img src="https://raw.githubusercontent.com/Bibek-2024/trendstore-infra/main/images/TrendStore%20DevOps%20Project%20Architecture%20diagram.png" width="900" alt="TrendStore DevOps Architecture">
 </p>
 
 ### **🚀 CI/CD Execution Flow**
