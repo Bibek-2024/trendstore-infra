@@ -1,18 +1,16 @@
 FROM nginx:stable-alpine
 
-# Set working directory to nginx asset directory
+# Set working directory
 WORKDIR /usr/share/nginx/html
 
-# Remove default nginx static assets
+# Remove default nginx files
 RUN rm -rf ./*
 
-# Copy the pre-built static files from your dist folder
+# Copy React/Vite build files
 COPY dist/ .
 
-# Custom Nginx configuration to listen on Port 3000 instead of 80
-RUN sed -i 's/listen\(.*\)80;/listen 3000;/' /etc/nginx/conf.d/default.conf
+# Nginx will run on default PORT 80 (NO CHANGE NEEDED)
 
-# Expose port 3000 for the documentation requirement
-EXPOSE 3000
+EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
