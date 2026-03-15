@@ -16,4 +16,11 @@ spec:
       - name: trend-app
         image: bibekdec2022/trend-app:latest
         ports:
-        - containerPort: 80
+        - containerPort: 3000  # Updated to match the internal Nginx port
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "250m"
+            memory: "256Mi"

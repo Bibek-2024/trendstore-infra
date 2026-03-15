@@ -7,6 +7,6 @@ spec:
   selector:
     app: trendstore
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
+    - protocol: TCP
+      port: 80         # The port users will use (e.g., http://your-elb-url.com)
+      targetPort: 3000  # The port where Nginx is listening inside your container
