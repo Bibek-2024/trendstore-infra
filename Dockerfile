@@ -1,16 +1,13 @@
 FROM nginx:stable-alpine
 
-# Set working directory
 WORKDIR /usr/share/nginx/html
-
-# Remove default nginx files
 RUN rm -rf ./*
 
-# Copy React/Vite build files
 COPY dist/ .
 
-# Nginx will run on default PORT 80 (NO CHANGE NEEDED)
+# Run nginx on port 3000 (old setup)
+RUN sed -i 's/listen\(.*\)80;/listen 3000;/' /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+EXPOSE 3000
 
 CMD ["nginx", "-g", "daemon off;"]
