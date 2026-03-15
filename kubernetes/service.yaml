@@ -1,12 +1,19 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: trendstore-service
+  name: trendstore-deployment
 spec:
-  type: LoadBalancer
+  replicas: 2
   selector:
-    app: trendstore
-  ports:
-    - protocol: TCP
-      port: 80         # The port users will use (e.g., http://your-elb-url.com)
-      targetPort: 3000  # The port where Nginx is listening inside your container
+    matchLabels:
+      app: trendstore
+  template:
+    metadata:
+      labels:
+        app: trendstore
+    spec:
+      containers:
+      - name: trend-app
+        image: bibekdec2022/trend-app:latest
+        ports:
+        - containerPort: 80
